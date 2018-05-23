@@ -11,46 +11,46 @@
 	<title>v info</title>
 
 	<style>
-		* {
-			box-sizing: border-box;
-		}
-		body { color: #000; }
-		pre {	padding: 2px;	line-height: 18px; }
-		.value { color: #080;	}
+		html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    color: #333333;
+}
+		body { color: #000; display: -webkit-box; display: -ms-flexbox; display: flex; align-items: center;
+  justify-content: center; }
+
+		pre {	padding: 2px;	line-height: 22px; }
+		.value { color: #081;	}
 		a { border: none;	cursor: pointer; color: inherit !important;
-			text-decoration: none; border-bottom: 1px solid #080; }
-		#content { position: absolute; }
+			text-decoration: none; border-bottom: 1px solid #081; }
+		#container{
+			position:absolute;
+			transform-style: preserve-3d;  
+			display: inline-block; 
+			box-sizing: border-box; 
+			border:1px solid gray;
+			/* background-image: linear-gradient(135deg, #ff00ba 0%, #fae713 100%); */
+			background: linear-gradient(135deg, #00c3ff, #ffff1c);}
+		#content {transform: translateZ(80px);}
 		.item {	line-height: 20px; }
-
-
-		.wrapper {
-			perspective: 1000px;
-		//	margin: 0 auto;
-			width: 15em;
-		}
-
-		.wrapper:hover .inner {
-			transform: rotate(0);
-			transition: .2s;
-		}
-
-		.inner {
-			transition: .3s;
-			transform: rotateY(30deg);
-			-moz-transform: rotateY(30deg); 
-			-webkit-transform: rotateY(30deg); 
-			-o-transform: rotateY(30deg); 
-		}
-
-
+		
 	</style>
 
 </head>
 <body>
-	<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">	
-	<script type="text/javascript" src="script.min.js"></script>
-	<script>
+	<div id="container" 
+		data-tilt 
+		data-tilt-reverse="false"
+		data-tilt-reset="false"
+		data-tilt-scale="1.6"
+		data-tilt-max="80"
+	></div>
+
 	
-	</script>	
+	<script type="text/javascript" src="script.min.js"></script>
+	<script src="vanilla-tilt.min.js"></script>
+
 </body>
 </html>
