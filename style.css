@@ -2,8 +2,8 @@ html, body {
 	font-family: Arial, Helvetica, sans-serif;
 	width: 100%; 
 	height: 100%; 
-	margin: 0px; 
-	padding: 0px; 
+	margin: 0; 
+	padding: 0; 
 	color: #333333; }
 
 /* body { 
@@ -23,7 +23,7 @@ pre {
 	-webkit-transition: .2s;
 	transition: .2s; }
 
-a { 
+a.value{ 
 	border: none;	
 	cursor: pointer; 
 	color: inherit !important;
@@ -88,17 +88,10 @@ a:hover {
 		height: 300px; 
 		margin: 40px 0; 
 		perspective: 600px; 
-
-		/* display: block;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 20em; */
-
 		display: block;
-		margin-top: 25%;
+		margin-top: 150px;
 		margin-left: auto;
 		margin-right: auto;
-
 	}
 
 	.card {
@@ -126,98 +119,64 @@ a:hover {
 
 /** FLOATING MENU */
 	.floating-menu {
-		background: yellowgreen;
 		padding: 5px;
 		width: 130px;
-		z-index: 0;
+		z-index: 1;
 		position: fixed;
-		right:5em;
-		top: 15em; }
+		right: 11%;
+		top: 5em; 
+		text-align: right;
+		line-height: 18px; }
 
 	.floating-menu a, 
 	.floating-menu h3 {
 		font-size: 0.9em;
 		display: block;
 		margin: 0 0.5em;
-		color: white; }
+		background:#dbdbdb;
+		 }
 /*****/
 
 /** STICKY NAVBAR */
-	* {
-		box-sizing: border-box;
-	}
-	
-	body {
-		margin: 0;
-	}
+	* {	box-sizing: border-box;	}
+
 	
 	.wrap {
-		width: 100%;
-		border: 1px solid #ccc;
-
+		width: 80%;
 		overflow: auto;
 		position: relative;
+		margin-left: auto;
+  	margin-right: auto;
 	}
-	
-	.top-header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 320px;
-		height: 60px;
-	}
-	.fix-search .top-header {
-		background: #eee;
-	}
-	
-	.search {
+
+	.navigation {
 		position: absolute;
-		top: 155px;
 		left: 20px;
 		right: 20px;
+		top:150px;
 	}
-	.search input {
-		width: 265px;
+	.navigation input {
+		width: 100%;
 		border: 1px solid #ccc;
 		padding: 8px;
 		font-size: 15px;
-		transition: width 0.2s;
-		-webkit-appearance: none;
+		/*transition: 0.2s;*/
 	}
-	.fix-search .search {
+	.fix-search .navigation {
 		position: fixed;
 		top: 10px;
 	}
-	.fix-search .search input {
-		width: 250px;
-	}
-	
-	.top {
-		height: 250px;
-		padding-top: 40px;
-	}
-	
-	.hero {
-		width: 200px;
-		height: 100px;
-		background: #ccc;
-		margin: 0 auto;
-	}
+ 	.fix-search .navigation input {
+		width: 80%;
+		margin-left:11%;
+
+	} 
 	
 	main {
-		padding: 0 20px;
-		display: flex;
+		padding: 15em 20px;
+/* 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: space-between; */
 	}
-	main div {
-		width: 125px;
-		height: 80px;
-		background: #ccc;
-		margin: 0 0 20px 0;
-	}
-
-
-
 
 /*****/
