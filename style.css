@@ -160,7 +160,7 @@ a:hover {
 		border: 1px solid #ccc;
 		padding: 8px;
 		font-size: 15px;
-		/*transition: 0.2s;*/
+		transition: 0.2s;
 	}
 	.fix-search .navigation {
 		position: fixed;
