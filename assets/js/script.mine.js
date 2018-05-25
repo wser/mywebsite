@@ -55,7 +55,7 @@
 			}, d)
 		}
 	}());
-	var contentId = "content";
+	var contentId = "wcontent";
 
 	function getContentElement() {
 		return document.getElementById(contentId)
@@ -136,7 +136,7 @@
 /** */
 
 /** Tilt element */
-	VanillaTilt.init(document.querySelector("#container"), {
+	VanillaTilt.init(document.querySelector("#wcontainer"), {
 		reverse:            false,  // reverse the tilt direction
 		max:                40,     // max tilt rotation (degrees)
 		perspective:        1000,   // Transform perspective, the lower the more extreme the tilt gets.
@@ -198,7 +198,7 @@
 /** */
 
 /** Sticky navigation bar */
-	const wrap = document.querySelector('#wrap');
+/* 	const wrap = document.querySelector('#wrap');
 
 	const navTop = wrap.offsetTop;
 
@@ -206,12 +206,61 @@
 
 		if (this.scrollY >= navTop-5) {
 			wrap.classList.add("fix-search");
-		} else {
 			wrap.classList.remove("fix-search");
 		}
 	}
 
-	window.addEventListener('scroll', stickyNavigation);
+	window.addEventListener('scroll', stickyNavigation); */
 
 
+/** */
+
+/** Scrollspy */
+	function scrollToY(e, t, n) {
+		function o() {
+			var t = (i += 1 / 60) / a,
+				u = c[n](t);
+			t < 1 ? (requestAnimFrame(o), window.scrollTo(0, r + (e - r) * u)) : window.scrollTo(0, e)
+		}
+		var r = window.scrollY || document.documentElement.scrollTop,
+			i = 0;
+		e = e || 0, t = t || 2e3, n = n || "easeOutSine";
+		var a = Math.max(.1, Math.min(Math.abs(r - e) / t, .8)),
+			c = {
+				easeOutSine: function (e) {
+					return Math.sin(e * (Math.PI / 2))
+				},
+				easeInOutSine: function (e) {
+					return -.5 * (Math.cos(Math.PI * e) - 1)
+				},
+				easeInOutQuint: function (e) {
+					return (e /= .5) < 1 ? .5 * Math.pow(e, 5) : .5 * (Math.pow(e - 2, 5) + 2)
+				}
+			};
+		o()
+	}
+
+	function menuControl(e) {
+		for (var t = window.scrollY || document.documentElement.scrollTop, n = e.querySelectorAll('a[href^="#"]'), o = 0; o < n.length; o++) {
+			var r = n[o],
+				i = document.querySelector(r.getAttribute("href"));
+			i.offsetTop <= t && i.offsetTop + i.clientHeight > t ? r.classList.add("active") : r.classList.remove("active")
+		}
+	}
+
+	function animated(e, t, n) {
+		var o, r = e.querySelectorAll('a[href^="#"]');
+		for (o = 0; o < r.length; o++) r[o].addEventListener("click", function (e) {
+			e.preventDefault(), scrollToY(document.querySelector(this.hash).offsetTop, t, n)
+		})
+	}
+
+	function scrollSpy(e, t, n) {
+		animated(e, t, n), document.addEventListener("scroll", function () {
+			menuControl(e)
+		})
+	}
+	window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (e) {
+		window.setTimeout(e, 1e3 / 60)
+	};
 /** */

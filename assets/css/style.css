@@ -23,18 +23,36 @@ pre {
 	-webkit-transition: .2s;
 	transition: .2s; }
 
+.value { 
+	color: #081; 
+}
+
 a.value{ 
 	border: none;	
 	cursor: pointer; 
 	color: inherit !important;
 	text-decoration: none; 
-	border-bottom: 1px solid #081; }
+	border-bottom: 1px solid #081; 
+}
 
-a:hover {
-		color:yellow }
+.value a {
+	color: red
+}
+	
+.value a:hover {
+	color:yellow 
+}
 
-.value { 
-	color: #081; }
+.credits {
+	text-align: right;
+}
+
+.credits a {
+	color: rgba(255, 255, 255, 0.603)
+}
+
+#back{z-index:-5;}
+#back:hover{cursor: pointer;}
 
 #wcontainer{
 	width: 408px;
@@ -56,7 +74,7 @@ a:hover {
 	box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.7), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
 	z-index: -1; }
 
-#content {
+#wcontent {
 	transform: translateZ(75px) }
 
 .item {	
