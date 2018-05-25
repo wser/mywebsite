@@ -87,7 +87,7 @@
 	};
 
 	function setContent(a) {
-		let c = document.getElementById("container")
+		let c = document.getElementById("wcontainer")
 		c.innerHTML = a
 	}
 
@@ -154,8 +154,8 @@
 /** */
 
 /** Card flipping */
-	var card = document.querySelector('.card');
-	var cont = document.getElementById('container');
+	var card = document.querySelector('.wcard');
+	var cont = document.getElementById('wcontainer');
 
 	card.addEventListener( 'click', function() {
 		card.classList.toggle('is-flipped');

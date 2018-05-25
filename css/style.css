@@ -36,7 +36,7 @@ a:hover {
 .value { 
 	color: #081; }
 
-#container{
+#wcontainer{
 	width: 408px;
 	height: 226px;
 	transform-style: preserve-3d;  
@@ -46,7 +46,7 @@ a:hover {
 	/* background-image: linear-gradient(135deg, #ff00ba 0%, #fae713 100%); */
 	background-image: linear-gradient(135deg, #00c3ff 0%, #ffff1c 100%); }
 
-#container:after {
+#wcontainer:after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -94,17 +94,17 @@ a:hover {
 		margin-right: auto;
 	}
 
-	.card {
+	.wcard {
 		width: 100%;
 		height: 100%;
 		transition: transform 1s;
 		transform-style: preserve-3d;
 		position: relative; }
 
-	.card.is-flipped { 
+	.wcard.is-flipped { 
 		transform: rotateY(180deg); }
 
-	.card__face {	
+	.wcard__face {	
 		position: absolute;	
 		width: 100%; 
 		height: 100%; 
@@ -112,7 +112,7 @@ a:hover {
 
 	/* .card__face--front { background: transparent;	} */
 
-	.card__face--back {	
+	.wcard__face--back {	
 			background: none;	
 			transform: rotateY(180deg);	}
 /*****/
